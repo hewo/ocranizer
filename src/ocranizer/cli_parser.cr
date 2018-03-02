@@ -8,22 +8,30 @@ module Ocranizer
       version
       help
     end
-    
+
     class Add < Cli::Command
+      class Options
+        # arg "name"
+        bool "--event"
+      end
+
       def run
         puts "add element"
+        puts "  type:" + (options.event? ? "event" : "todo")
+        puts unparsed_args
+        puts nameless_args
       end
     end
-    
+
     class List < Cli::Command
       def run
         puts "list"
         c = Collection.new
         c.load
 
-        events = c.events
         todos = c.todos
-        puts render_array_of_entities(events+todos)
+        events = c.events
+        puts render_array_of_entities(todos + events)
       end
 
       def render_array_of_entities(array)
@@ -41,13 +49,13 @@ module Ocranizer
 
     class Change < Cli::Command
     end
-    #def run
+
+    # def run
     #  puts "Command me"
-    #end
+    # end
     def version!
       puts "Version: #{Ocranizer::VERSION}"
       exit
     end
   end
-    
 end
