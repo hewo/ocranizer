@@ -12,6 +12,8 @@ crystal: 0.21.0
 
 license: MIT
 
-# dependencies:
+dependencies:
+  cli:
+    github: mosop/cli
 #   ncurses:
 #     github: jreinert/ncurses-crystal

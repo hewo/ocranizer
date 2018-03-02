@@ -1,6 +1,18 @@
 version: 1.0
 shards:
-  ncurses:
-    github: jreinert/ncurses-crystal
-    commit: c110618fcc81d24e7085e8634fd68f6779e8af2a
+  callback:
+    github: mosop/callback
+    version: 0.6.3
+
+  cli:
+    github: mosop/cli
+    version: 0.6.10
+
+  optarg:
+    github: mosop/optarg
+    version: 0.5.8
+
+  string_inflection:
+    github: mosop/string_inflection
+    version: 0.2.1
 
